@@ -40,20 +40,16 @@ function PostContent(props) {
         );
       }
 
-      let children = paragraph.children;
-
-      return <p>{children}</p>;
+      return <p>{paragraph.children}</p>;
     },
 
     code(code) {
       const { className, children } = code;
       const language = className.split("-")[1];
       return (
-        <SyntaxHighlighter
-          style={atomDark}
-          language={language}
-          children={children}
-        />
+        <SyntaxHighlighter style={atomDark} language={language}>
+          {children}
+        </SyntaxHighlighter>
       );
     },
   };
